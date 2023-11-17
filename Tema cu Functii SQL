@@ -1,0 +1,190 @@
+
+	1. Retrieve all the column  FirstName from the Person table.
+
+SELECT FirstName FROM Person.Person;
+
+-- Afiseaza toti angajatii dupa Prenume din tabela "Person"
+
+	2. Retrieve all columns from the "employees" table.
+	
+	SELECT * FROM employees;
+	
+-- Afiseaza toti angajatii din tabela "employees"
+	
+	3. Retrieve employees with a salary greater than 5000 from the "employees" table.
+	
+	SELECT * FROM employees WHERE salary > 5000;
+	
+-- Afiseaza angajatii care au salar mai mare decat "5000"
+
+	4. (ORDER BY) Retrieve employees from the "employees" table, ordered by their hire date in descending order.
+	
+	SELECT * FROM employees ORDER BY hire_date DESC;
+	
+-- Afiseaza angajatii dupa data angajarii ordonat descrescator 
+
+	5. (AVG) Calculate the average salary of all employees.
+	SELECT AVG(salary) FROM employees;
+	
+-- Afiseaza salariul mediu al tuturor angajatilor
+
+	6. (Grouping and Aggregation) Calculate the total salary for each department.
+	
+	SELECT department_id, SUM(salary) as total_salary 
+	FROM employees GROUP BY department_id;
+	
+--Calculeaza salariul total pentru fiecare departament.
+
+	7. (JOIN) Retrieve a list of employees with their department names.
+	
+	SELECT e.*, d.department_name FROM employees e
+	JOIN departments d ON e.department_id = d.department_id;
+	
+-- Afiseaza lista de angajati cu numele departamentelor lor
+
+	8. (LIKE ) Retrieve employees whose last name starts with 'S'.
+	SELECT * FROM employees WHERE last_name LIKE 'S%';
+	
+-- Afiseaza angajatii caror nume de familie incepe cu 'S'
+
+	9. (NULL) Retrieve employees with no manager.
+	SELECT * FROM employees WHERE manager_id IS NULL;
+	
+-- Afiseaza angajatii care nu au manager
+	
+	10. (COUNT) Count the number of employees in each department.
+	
+	SELECT department_id, COUNT(*) as num_employees 
+	FROM employees GROUP BY department_id;
+	
+-- Afiseaza numărul de angajați din fiecare departament.
+
+
+	11. (MAX and MIN) Find the employee with the highest salary.
+	
+	SELECT * FROM employees WHERE salary = (SELECT MAX(salary) FROM employees);
+	
+--Afiseaza angajatul cu cel mai mare salariu.
+	
+	
+	12. (DISTINCT) Retrieve distinct job titles from the "employees" table.
+	
+	SELECT DISTINCT job_title FROM employees;
+
+--Afiseaza numele functiile angajatilor distincte din tabela „employees”.
+	
+	13. (LIMIT and OFFSET) Retrieve the first 10 employees from the "employees" table.
+	
+	SELECT * FROM employees LIMIT 10;
+	
+--Afiseaza primi 10 angajati din tabela 'employees'
+
+	14. (CASE) Classify employees into 'High Salary' and 'Low Salary' based on a threshold.
+	
+	SELECT
+	  employee_id,
+	  first_name,
+	  salary,
+	  CASE
+	    WHEN salary > 8000 THEN 'High Salary'
+	    ELSE 'Low Salary'
+	  END as salary_class
+	FROM employees;
+	
+--Afiseaza High salary la angajatii care au salariu > 8000 si Low salary la angajatii care au sub 10000
+
+	15. (UPPER Case) Retrieve employees' first names in uppercase.
+	
+	SELECT employee_id, UPPER(first_name) as upper_first_name FROM employees;
+	
+--Afiseaza prenumele angajaților cu majuscule.
+
+	16. (DATE Formatting) Display the hire date of employees in the 'YYYY-MM-DD' format.
+	
+	SELECT employee_id, first_name, hire_date, DATE_FORMAT(hire_date, '%Y-%m-%d') as formatted_hire_date FROM employees;
+	
+-- Afiseaza ziua de angajare a angajatiilor in format  'YYYY-MM-DD' 
+
+	17. (IN) Select all the records where Country is either "Norway" or "France".
+
+SELECT * FROM Customers
+WHERE Country IN ('Norway', 'France');
+
+--Afiseaza clientii care sunt din Norgevia sau Franta
+
+	18. (BETWEEM) Select all the records where the value of the Price column is between 10 and 20.
+
+	SELECT * FROM Products
+	WHERE Price BETWEEN 10 AND 20;
+
+--Afiseaza produsele care au pretul intre 10 si 20
+
+	19. (ALIAS) When displaying the Customers table, make an ALIAS of the PostalCode column, the column should be called Pno instead.
+
+	SELECT CustomerName,
+	Address,
+	PostalCode AS Pno
+	FROM Customers;
+	
+--Seteaza alias la PostalCode ca Pno
+
+	20. (GETDATE) Returns the sum of the months since birth
+
+	select DATEDIFF(MONTH, '1989-03-25', GETDATE())
+	
+--Afiseaza suma lunilor de la nastere (416)
+
+
+	
+
+
+	
+	
+
+
+	
+	
+
+
+
+
+	
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
