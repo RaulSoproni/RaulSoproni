@@ -77,7 +77,7 @@ SELECT FirstName FROM Person.Person;
 	
 	SELECT * FROM employees LIMIT 10;
 	
---Afiseaza primi 10 angajati din tabela 'employees'
+--Afiseaza primi 10 angajati din tabela employees
 
 	14. (CASE) Classify employees into 'High Salary' and 'Low Salary' based on a threshold.
 	
@@ -112,7 +112,7 @@ WHERE Country IN ('Norway', 'France');
 
 --Afiseaza clientii care sunt din Norgevia sau Franta
 
-	18. (BETWEEM) Select all the records where the value of the Price column is between 10 and 20.
+	18. (BETWEEN) Select all the records where the value of the Price column is between 10 and 20.
 
 	SELECT * FROM Products
 	WHERE Price BETWEEN 10 AND 20;
